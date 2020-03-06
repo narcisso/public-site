@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="invisible">
+<head>
+  <title>Home</title>
+  <%- include(style +'/_header.html'); -%>
+</head>
+<body>
+
+  <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/vendor/underscore.js"></script>
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+
+  <div id="p-index" class="h-100">
+
+    <%- include(style +'/index/_hero.html'); -%>
+    <%- include(style +'/index/_content.html'); -%>
+    <%- include(style +'/index/_footer.html'); -%>
+
+  </div>
+
+  <!--============================
+  =            Modals            =
+  =============================-->
+
+  <div class="modal fade" id="modal-login" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title text-center">
+            LOGIN TO YOUR ACCOUNT</h5>
+          <button class="close"
+                  type="button" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form js-form id="login">
+
+            <input id="cy-token" type="hidden"></input>
+
+            <!-- Feedback -->
+            <div class="banner banner-danger m-b-20 d-none"
+                 js-error></div>
+
+            <!-- Input -->
+            <div class="form-group" tabindex="0">
+
+              <label for="username">
+                Username</label>
+
+              <input class        = "form-control"
+                     type         = "text"
+                     name         = "username"
+                     autocomplete = "off"
+                     js-username cy-user disabled/>
+            </div>
+
+            <!-- Input -->
+            <div class="form-group" tabindex="1">
+
+              <div class="d-flex justify-content-between">
+                <label for="password">
+                  Password</label>
+                <a href="/reset_password" tabindex="-1">
+                  Forgot password?</a>
+              </div>
+
+              <input class        = "form-control"
+                     type         = "password"
+                     name         = "password"
+                     autocomplete = "off"
+                     tabindex     = "0"
+                     js-password disabled/>
+            </div>
+
+            <!-- Submit Action -->
+
+            <button disabled cy-submit js-submit class="btn btn-primary w-100" type="submit">
+              LOGIN
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Load everything, then render the content -->
+  <script>
+    if (navigator.userAgent.indexOf("MSIE") >= 0) {
+      document.write('<p>You are using a browser we currently don\'t support.<br> <a href="https://browsehappy.com/">Upgrade your browser</a> the latest version of <strong>Chrome, Firefox, Opera or Safari</strong>.</p>');
+    }
+    $(window).on('load', function() { $('html').attr('class', ''); });
+  </script>
+
+</body>
+</html>

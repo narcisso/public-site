@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="invisible">
+<head>
+  <title>Home</title>
+  <%- include(style +'/_header.html'); -%>
+</head>
+<body>
+
+  <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="js/registration.js"></script>
+
+  <div id="p-registration" class="h-100">
+
+    <!--=============================
+    =            HERO            =
+    ==============================-->
+
+    <div class="section-hero">
+
+      <!-- Bg Img -->
+
+      <div class="overlay"></div>
+
+      <!--====  Nav  ====-->
+
+      <%- include(style +'/_navbar.html'); -%>
+
+
+      <!--====  Content  ====-->
+
+      <div class="section-headline">
+        <div class="container">
+
+          <!-- Headline -->
+
+          <h1 class="headline">
+            Create your account</h1>
+
+          <p class="tagline">
+            Call us at 955-478-1147 if you have any questions.
+          </p>
+
+          <!-- Form -->
+
+          <div class="form-container">
+            <form js-form id="registration">
+
+              <!-- Name  ====-->
+
+              <div class="form-row m-b-20">
+
+                <div class="col">
+
+                  <!-- Input -->
+
+                  <div class="form-group">
+                    <label for="email">
+                      First name</label>
+                    <input class        = "form-control"
+                           type         = "text"
+                           name         = "first_name"
+                           autocomplete = "off"
+                           required js-first_name />
+
+                    <div class="label-error"
+                         js-error="first_name"></div>
+
+                  </div>
+                </div>
+
+                <div class="col">
+
+                  <!-- Input -->
+
+                  <div class="form-group">
+                    <label for="email">
+                      Last Name</label>
+                    <input class        = "form-control"
+                           type         = "text"
+                           name         = "last_name"
+                           autocomplete = "off"
+                           required js-last_name />
+
+                    <div class="label-error"
+                         js-error="last_name"></div>
+
+                  </div>
+                </div>
+
+                <div class="col">
+
+                  <!-- Input -->
+
+                  <div class="form-group">
+
+                    <label for=""> Role</label>
+
+                    <select class = "form-control" name="role" js-role >
+                      <option value="user">User</option>
+                      <option value="admin">Admin</option>
+                    </select>
+
+                    <div class="label-error" js-error=""></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Emails  ====-->
+
+              <!-- Input -->
+
+              <div class="form-group">
+                <label for="email">
+                  Email</label>
+                <input class        = "form-control"
+                       type         = "email"
+                       name         = "email"
+                       autocomplete = "off"
+                       required cy-user js-email />
+
+                <div class="label-error"
+                     js-error="email"></div>
+
+              </div>
+
+              <!-- Input -->
+
+              <div class="form-group">
+                <label for="confirm_email">
+                  Confirm Email</label>
+                <input class        = "form-control"
+                       type         = "email"
+                       name         = "confirm_email"
+                       autocomplete = "off"
+                       required js-confirm_email />
+
+                <div class="label-error"
+                     js-error="confirm_email"></div>
+
+              </div>
+
+              <!-- Passwords  ====-->
+
+              <div class="form-row m-b-32">
+                <div class="col">
+
+                  <!-- Input -->
+
+                  <div class="form-group">
+                    <label for="confirm_email">
+                      Password</label>
+                    <input class        = "form-control"
+                           type         = "password"
+                           name         = "password"
+                           autocomplete = "off"
+                           required js-password />
+
+                    <div class="label-error"
+                         js-error="password"></div>
+
+                  </div>
+
+                </div>
+
+                <div class="col">
+
+                  <!-- Input -->
+
+                  <div class="form-group">
+                    <label for="confirm_email">
+                      Confirm Password</label>
+                    <input class        = "form-control"
+                           type         = "password"
+                           name         = "confirm_password"
+                           autocomplete = "off"
+                           required js-confirm_password />
+
+                    <div class="label-error"
+                         js-error="confirm_password"></div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Submit Action -->
+
+              <button js-submit class="btn btn-primary w-100"
+                      type="submit" value="Register">
+                CREATE ACCOUNT
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Load everything, then render the content -->
+  <script>
+    if (navigator.userAgent.indexOf("MSIE") >= 0) {
+      document.write('<p>You are using a browser we currently don\'t support.<br> <a href="https://browsehappy.com/">Upgrade your browser</a> the latest version of <strong>Chrome, Firefox, Opera or Safari</strong>.</p>');
+    }
+    $(window).on('load', function() { $('html').attr('class', ''); });
+  </script>
+
+</body>
+</html>

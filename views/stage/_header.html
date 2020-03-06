@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Assets -->
+<link rel="stylesheet"    href="<%= style %>/css/style.min.css">
+<link rel="shortcut icon" href="<%= style %>/img/favicon.ico">
+
+<!-- Cymatic Security Tracking Code -->
+<% if (env == 'production') { %>
+  <script src="https://sdk.cymaticsecurity.com/<%=sdk_uuid%>/sdk"></script>
+<% } else { %>
+  <script src="https://sdk.<%= env %>.cymatic.info/<%= sdk_uuid %>/sdk"></script>
+<% } %>
