@@ -14,7 +14,9 @@
     "db"                : "demo",
     "autoReconnect"     : true,
     "reconnectInterval" : 500,
-    "reconnectTries"    : 60
+    "reconnectTries"    : 60,
+    "user"              : "",
+    "pass"              : ""
   },
 
   "Cymatic": {
