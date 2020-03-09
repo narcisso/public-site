@@ -4,12 +4,12 @@ const MongoClient = require('../lib/mongo');
 
 module.exports.init = function(){
   let settings = nconf.get('mongo');
-  let client   = new MongoClient(settings);
 
   Logger.info({
     message     : 'Mongo',
     description : settings
   });
 
+  let client = new MongoClient(settings);
   this.mongo = client.engine;
 };
